@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv sh
+
+_term() {
+  /usr/bin/transmission-remote --exit
+}
+
+trap _term SIGTERM
+	
+s6-setuidgid trans /usr/bin/transmission-daemon \
+  -g /config -c /watch -f &
+
+wait

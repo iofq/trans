@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv sh
+
+mkdir -p \
+	/downloads/incomplete /watch
+
+#[[ -f /config/settings.json ]] || cp \
+#	/defaults/settings.json /config/settings.json
+
+chown trans:trans \
+	/config/settings.json \
+	/config \
+	/downloads \
+	/downloads/incomplete \
+	/watch \
+	/ovpn
