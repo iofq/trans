@@ -19,7 +19,7 @@ COPY root/ /
 
 EXPOSE 9091
 
-HEALTHCHECK --interval=120s --timeout=15s --start-period=120s \
-  CMD ping -c 3 1.0.0.1
+HEALTHCHECK --interval=240s --timeout=15s --start-period=20s \
+  CMD sh /app/healthcheck.sh
 
 ENTRYPOINT ["/init"]
